@@ -26,6 +26,7 @@
 
     <!-- PRELOAD -->
     <link rel="preload" as="image" href="images/steelpower.png">
+    <link rel="preload" as="image" href="images/logo.svg">
 
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
@@ -197,8 +198,7 @@
         .policy-content h4 { font-weight: 800; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px; }
 
         .logo-glow {
-            letter-spacing: 0.2em;
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
         }
 
         .glass-panel {
@@ -212,6 +212,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .header-logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            margin: 0 auto 24px auto;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -219,7 +231,9 @@
     <!-- Header -->
     <header class="sticky top-0 bg-[#020617]/90 backdrop-blur-xl z-50 border-b border-sky-500/10">
         <div class="container mx-auto flex justify-between items-center p-5 px-8">
-            <span class="text-white font-black text-xl tracking-widest logo-glow">STEEL<span class="text-sky-400">POWER</span></span>
+            <a href="/" class="logo-glow">
+                <img src="images/logo.svg" alt="SteelPower Logo" class="header-logo-img">
+            </a>
             <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
                 <span class="hover:text-sky-400 cursor-pointer transition-colors">Lab Tested</span>
                 <span class="hover:text-sky-400 cursor-pointer transition-colors">USA Quality</span>
@@ -399,7 +413,7 @@
         <div class="container mx-auto px-6 text-center">
             
             <div class="mb-16">
-                <span class="text-slate-900 font-black text-3xl tracking-[0.4em] block mb-8 opacity-20">STEELPOWER</span>
+                <img src="images/logo.svg" alt="SteelPower Logo" class="footer-logo-img">
                 <p class="text-[10px] font-black text-sky-500/50 uppercase tracking-[0.3em] mb-2">Technical Support</p>
                 <p class="text-[10px] tracking-widest">19655 E 35th Drive, Suite 100, Aurora, CO 80011, USA</p>
                 <p class="text-[10px] tracking-widest mt-1">service@pavaroo.com</p>
