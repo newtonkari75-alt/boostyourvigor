@@ -27,6 +27,9 @@
     <link rel="preload" as="image" href="images/steelpower.png">
     <link rel="preload" as="image" href="images/imgi_9_logo.svg">
 
+    <!-- FAVICON -->
+    <link rel="icon" href="images/faviconV2.png" type="image/png">
+
     <!-- UI Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -49,7 +52,7 @@
             overflow-x: hidden;
         }
 
-        /* Animações Google Ads 2026 (Suaves) */
+        /* Animações Suaves */
         .reveal { 
             opacity: 0; 
             transform: translateY(20px); 
@@ -138,22 +141,10 @@
             animation: scroll 40s linear infinite;
         }
 
-        .scroller-track:hover {
-            animation-play-state: paused;
-        }
+        .scroller-track:hover { animation-play-state: paused; }
 
         .logo-img { height: 35px; width: auto; }
         .footer-logo-img { height: 45px; width: auto; margin: 0 auto 24px auto; opacity: 0.9; }
-
-        /* Responsive Flow */
-        @media (max-width: 1023px) {
-            .mobile-bottle { display: block; margin: 2rem auto; }
-            .desktop-bottle { display: none; }
-        }
-        @media (min-width: 1024px) {
-            .mobile-bottle { display: none; }
-            .desktop-bottle { display: block; }
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -178,11 +169,12 @@
             <div class="hero-overlay-pattern"></div>
             
             <div class="container mx-auto px-6 py-12 lg:py-24 hero-container">
-                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+                <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
                     
-                    <!-- Content Column -->
-                    <div class="text-center lg:text-left reveal">
-                        <div class="inline-flex items-center gap-3 bg-sky-500/10 border border-sky-500/30 rounded-full px-5 py-2 mb-8 shadow-lg">
+                    <!-- Content Area -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left flex flex-col reveal">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-3 bg-sky-500/10 border border-sky-500/30 rounded-full px-5 py-2 mb-8 shadow-lg self-center lg:self-start order-1">
                             <span class="relative flex h-2 w-2">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
@@ -190,22 +182,24 @@
                             <span class="text-[10px] font-black uppercase tracking-[0.25em] text-sky-400">High-Impact Vitality Protocol</span>
                         </div>
 
-                        <h1 class="text-6xl md:text-8xl font-black mb-6 lg:mb-8 leading-[0.95] tracking-tighter text-white">
+                        <!-- Title -->
+                        <h1 class="text-6xl md:text-8xl font-black mb-6 lg:mb-8 leading-[0.95] tracking-tighter text-white order-2">
                             Master Your <span class="text-sky-400">Core Strength.</span>
                         </h1>
 
-                        <!-- Mobile Bottle Image - Directly after title -->
-                        <div class="mobile-bottle relative group float-animation">
+                        <!-- Consolidated Bottle Image: Visible here on mobile (order-3), hidden on desktop -->
+                        <div class="lg:hidden order-3 my-10 relative group float-animation">
                             <div class="absolute -inset-10 bg-sky-500/10 rounded-full blur-[80px] z-0"></div>
                             <img src="images/steelpower.png" alt="SteelPower Supplement" class="relative z-10 w-full max-w-[280px] mx-auto product-shadow">
                         </div>
                         
-                        <p class="text-lg md:text-xl lg:text-2xl mb-10 text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+                        <!-- Description -->
+                        <p class="text-lg md:text-xl lg:text-2xl mb-10 text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium order-4">
                             The definitive choice for elite performance. SteelPower leverages clinical-grade natural compounds to maximize your daily energy and physical potential.
                         </p>
                         
                         <!-- Benefits -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12 text-left">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12 text-left order-5">
                             <div class="flex items-start gap-4 glass-panel p-5 rounded-3xl">
                                 <div class="bg-sky-500/10 p-2 rounded-lg text-sky-400"><i data-feather="zap" class="w-5 h-5"></i></div>
                                 <div>
@@ -222,8 +216,8 @@
                             </div>
                         </div>
 
-                        <!-- CTA Container (Responsive) -->
-                        <div class="w-full max-w-md mx-auto lg:mx-0 space-y-5">
+                        <!-- CTA Container -->
+                        <div class="w-full max-w-md mx-auto lg:mx-0 space-y-5 order-6">
                             <a href="https://mwebora.com/12200/207/7/?" class="cta-button flex items-center justify-between px-10 py-7 rounded-2xl font-black text-sm uppercase tracking-[0.2em] group">
                                 <span>Instant Access -38%</span>
                                 <i data-feather="zap" class="w-5 h-5 fill-current"></i>
@@ -241,8 +235,8 @@
                         </div>
                     </div>
 
-                    <!-- Desktop Bottle Column -->
-                    <div class="desktop-bottle reveal flex flex-col items-center">
+                    <!-- Consolidated Bottle Image: Visible here on desktop, hidden on mobile -->
+                    <div class="hidden lg:flex w-full lg:w-1/2 flex-col items-center reveal">
                         <div class="relative group float-animation">
                             <div class="absolute -inset-24 bg-sky-500/20 rounded-full blur-[120px] z-0 animate-pulse"></div>
                             <img src="images/steelpower.png" alt="SteelPower Premium" class="relative z-10 w-full max-w-[420px] h-auto product-shadow transition-all duration-700 hover:scale-105">
